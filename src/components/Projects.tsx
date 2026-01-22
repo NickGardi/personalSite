@@ -22,19 +22,28 @@ export interface Project {
 
 const projects: Project[] = [
   {
-    title: 'Project Title',
-    description: 'Brief description of your project.',
-    longDescription: 'Detailed description of your project. Explain what it does, how it works, and what technologies or techniques you used. This will appear in the modal when users click on the project.',
-    technologies: ['Technology 1', 'Technology 2', 'Technology 3'],
-    imageUrl: undefined,
-    media: [],
+    title: 'Limit Order Book & Execution Simulator',
+    description: 'Built a Python-based limit order book and execution simulator modeling price–time priority, partial fills, and market orders.',
+    longDescription: 'Developed a limit order book and execution simulator in Python to model exchange matching engine behavior. The system implements price–time priority matching, handles partial fills, and processes market orders. Built post-trade analytics to explore execution quality, slippage, and liquidity dynamics through scenario-based simulations. Created a lightweight web interface using React and FastAPI for interactive visualization and analysis of order execution patterns.',
+    technologies: ['Python', 'FastAPI', 'NumPy', 'SortedContainers', 'React'],
+    imageUrl: '/chart.jpg',
+    media: [
+      { type: 'image', url: '/chart.jpg', title: 'Limit Order Book Visualization' },
+    ],
   },
   {
-    title: 'Real-Time Multiplayer Game Platform (1v1 Tag Arena)',
-    description: 'Implemented an authoritative real-time multiplayer backend supporting concurrent 1v1 matches with deterministic state updates.',
-    longDescription: 'Implemented an authoritative real-time multiplayer backend supporting concurrent 1v1 matches with deterministic state updates. Built matchmaking, server-side collision detection, and graceful handling of disconnects and timeouts. The system ensures fair gameplay through server-authoritative game state management and handles network latency challenges.',
-    technologies: ['Python', 'Go', 'WebSockets', 'Redis', 'PostgreSQL'],
-    media: [],
+    title: 'Concurrent Multiplayer Game Platform',
+    description: 'A scalable multiplayer game platform built with Go, leveraging goroutines and channels to handle concurrent game sessions and real-time player communication.',
+    longDescription: 'Developed a high-performance multiplayer game platform using Go that enables multiple players to compete in real-time minigames. The system utilizes Go\'s concurrency primitives (goroutines and channels) to efficiently manage concurrent game sessions, player matchmaking, and WebSocket connections. Implemented server-side game state synchronization to ensure fair gameplay and handle network latency. The platform supports multiple game types with a clean, modular architecture that allows for easy addition of new games. Built with a Go backend and JavaScript frontend, demonstrating full-stack development capabilities.',
+    technologies: ['Go', 'WebSockets', 'JavaScript', 'REST APIs'],
+    imageUrl: '/typegamepic.png',
+    demoUrl: 'https://goservergames.fly.dev/',
+    githubUrl: 'https://github.com/NickGardi/GoServerGames',
+    media: [
+      { type: 'image', url: '/typegamepic.png', title: 'Concurrent Multiplayer Game Platform Screenshot' },
+      { type: 'image', url: '/rtgame2.png', title: 'Real-Time Game Screenshot 2' },
+      { type: 'image', url: '/rtgame1.png', title: 'Real-Time Game Screenshot 1' },
+    ],
   },
   {
     title: 'Neuroevolution-Based Game AI (Flappy Bird)',
@@ -97,7 +106,7 @@ const Projects: React.FC = () => {
         const nextIndex = (currentIndex + 1) % project.media!.length;
         return { ...prev, [projectIndex]: nextIndex };
       });
-    }, 1500);
+    }, 1000);
   };
 
   const handleProjectMouseLeave = (projectIndex: number) => {
