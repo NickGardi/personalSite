@@ -22,6 +22,16 @@ export interface Project {
 
 const projects: Project[] = [
   {
+    title: 'StockOps',
+    description: 'Built an embedded Shopify inventory app (Remix/React, Prisma, GraphQL) that replaces Stocky-lite for merchants: reorder suggestions from sales velocity, supplier management, purchase orders with receiving, and multi-location stock transfers synced to Shopify inventory.',
+    longDescription: 'Built StockOps, an embedded Shopify inventory management app using Remix, Prisma, and Shopify GraphQL, covering reorder forecasting, purchase orders, receiving, suppliers, and inter-location transfers. Designed workflows that keep local inventory state and Shopify in sync (send/receive/delete reverse), with soft-delete audit trails and webhook-driven product/location updates. Implemented multi-tenant shop isolation, encrypted access-token storage, and operational UI for drafts → confirm → receive purchase order flows. Shopify App Store listing pending approval.',
+    technologies: ['Remix', 'React', 'Prisma', 'GraphQL', 'Shopify'],
+    imageUrl: '/stockops.png',
+    media: [
+      { type: 'image', url: '/stockops.png', title: 'StockOps Screenshot' },
+    ],
+  },
+  {
     title: 'Limit Order Book & Execution Simulator',
     description: 'Built a Python-based limit order book and execution simulator modeling price–time priority, partial fills, and market orders.',
     longDescription: 'Developed a limit order book and execution simulator in Python to model exchange matching engine behavior. The system implements price–time priority matching, handles partial fills, and processes market orders. Built post-trade analytics to explore execution quality, slippage, and liquidity dynamics through scenario-based simulations. Created a lightweight web interface using React and FastAPI for interactive visualization and analysis of order execution patterns.',
