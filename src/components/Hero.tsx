@@ -44,12 +44,6 @@ const Hero: React.FC = () => {
                 </svg>
               </a>
             </div>
-            <div className="hero-description">
-              <p>
-                I'm a software engineer with experience building full-stack applications, from backend systems to interactive web interfaces. 
-                I enjoy working across the stack and exploring new technologies, with projects spanning real-time systems, data analysis, and mobile development.
-              </p>
-            </div>
           </div>
         </div>
       </div>

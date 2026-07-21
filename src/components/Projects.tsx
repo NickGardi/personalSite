@@ -27,18 +27,20 @@ const projects: Project[] = [
     longDescription: 'Built StockOps, an embedded Shopify inventory management app using Remix, Prisma, and Shopify GraphQL, covering reorder forecasting, purchase orders, receiving, suppliers, and inter-location transfers. Designed workflows that keep local inventory state and Shopify in sync (send/receive/delete reverse), with soft-delete audit trails and webhook-driven product/location updates. Implemented multi-tenant shop isolation, encrypted access-token storage, and operational UI for drafts → confirm → receive purchase order flows. Shopify App Store listing pending approval.',
     technologies: ['Remix', 'React', 'Prisma', 'GraphQL', 'Shopify'],
     imageUrl: '/stockops.png',
+    githubUrl: 'https://github.com/NickGardi/stockOps',
     media: [
       { type: 'image', url: '/stockops.png', title: 'StockOps Screenshot' },
     ],
   },
   {
-    title: 'Limit Order Book & Execution Simulator',
-    description: 'Built a Python-based limit order book and execution simulator modeling price–time priority, partial fills, and market orders.',
-    longDescription: 'Developed a limit order book and execution simulator in Python to model exchange matching engine behavior. The system implements price–time priority matching, handles partial fills, and processes market orders. Built post-trade analytics to explore execution quality, slippage, and liquidity dynamics through scenario-based simulations. Created a lightweight web interface using React and FastAPI for interactive visualization and analysis of order execution patterns.',
-    technologies: ['Python', 'FastAPI', 'NumPy', 'SortedContainers', 'React'],
-    imageUrl: '/chart.jpg',
+    title: 'Fitness Wearable Data Aggregation Mobile App',
+    description: 'A mobile app that connects to WHOOP wearables to display real-time heart rate data and provide audio feedback based on heart rate zones.',
+    longDescription: 'A mobile application that integrates with WHOOP fitness trackers to display real-time heart rate monitoring. The app processes continuous BPM data streams and provides zone-based audio feedback to help users stay within their target heart rate zones during workouts. App Store listing pending approval.',
+    technologies: ['React Native', 'TypeScript', 'REST APIs'],
+    imageUrl: '/whoopapp.png',
+    githubUrl: 'https://github.com/NickGardi/WhoopRun',
     media: [
-      { type: 'image', url: '/chart.jpg', title: 'Limit Order Book Visualization' },
+      { type: 'image', url: '/whoopapp.png', title: 'Fitness App Screenshot' },
     ],
   },
   {
@@ -69,14 +71,13 @@ const projects: Project[] = [
     ],
   },
   {
-    title: 'Fitness Wearable Data Aggregation Mobile App',
-    description: 'A mobile app that connects to WHOOP wearables to display real-time heart rate data and provide audio feedback based on heart rate zones.',
-    longDescription: 'A mobile application that integrates with WHOOP fitness trackers to display real-time heart rate monitoring. The app processes continuous BPM data streams and provides zone-based audio feedback to help users stay within their target heart rate zones during workouts. App Store coming soon.',
-    technologies: ['React Native', 'TypeScript', 'REST APIs'],
-    imageUrl: '/whoopapp.png',
-    githubUrl: 'https://github.com/NickGardi/WhoopRun',
+    title: 'Limit Order Book & Execution Simulator',
+    description: 'Built a Python-based limit order book and execution simulator modeling price–time priority, partial fills, and market orders.',
+    longDescription: 'Developed a limit order book and execution simulator in Python to model exchange matching engine behavior. The system implements price–time priority matching, handles partial fills, and processes market orders. Built post-trade analytics to explore execution quality, slippage, and liquidity dynamics through scenario-based simulations. Created a lightweight web interface using React and FastAPI for interactive visualization and analysis of order execution patterns.',
+    technologies: ['Python', 'FastAPI', 'NumPy', 'SortedContainers', 'React'],
+    imageUrl: '/chart.jpg',
     media: [
-      { type: 'image', url: '/whoopapp.png', title: 'Fitness App Screenshot' },
+      { type: 'image', url: '/chart.jpg', title: 'Limit Order Book Visualization' },
     ],
   },
 ];
