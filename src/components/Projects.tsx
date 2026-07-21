@@ -15,6 +15,7 @@ export interface Project {
   longDescription?: string;
   imageUrl?: string;
   demoUrl?: string;
+  demoLabel?: string;
   githubUrl?: string;
   technologies?: string[];
   media?: MediaItem[];
@@ -23,8 +24,8 @@ export interface Project {
 const projects: Project[] = [
   {
     title: 'Shopify Inventory Management App',
-    description: 'Built an embedded Shopify inventory app (Remix/React, Prisma, GraphQL) that replaces Stocky-lite for merchants: reorder suggestions from sales velocity, supplier management, purchase orders with receiving, and multi-location stock transfers synced to Shopify inventory.',
-    longDescription: 'Built StockOps, an embedded Shopify inventory management app using Remix, Prisma, and Shopify GraphQL, covering reorder forecasting, purchase orders, receiving, suppliers, and inter-location transfers. Designed workflows that keep local inventory state and Shopify in sync (send/receive/delete reverse), with soft-delete audit trails and webhook-driven product/location updates. Implemented multi-tenant shop isolation, encrypted access-token storage, and operational UI for drafts → confirm → receive purchase order flows. Shopify App Store listing pending approval.',
+    description: 'An embedded Shopify inventory app for merchants who hold stock. It covers reorder suggestions from sales velocity, suppliers with cost and lead time, purchase orders and receiving into Shopify, transfers between locations, stock takes, adjustments, and a dashboard for low-stock and stockout risk.',
+    longDescription: 'An embedded Shopify inventory app for merchants who hold stock. It covers reorder suggestions from sales velocity, suppliers with cost and lead time, purchase orders and receiving into Shopify, transfers between locations, stock takes, adjustments, and a dashboard for low-stock and stockout risk. App Store listing pending.',
     technologies: ['Remix', 'React', 'Prisma', 'GraphQL', 'Shopify'],
     imageUrl: '/stockops.png',
     githubUrl: 'https://github.com/NickGardi/stockOps',
@@ -35,9 +36,11 @@ const projects: Project[] = [
   {
     title: 'Fitness Wearable Data Aggregation Mobile App',
     description: 'A mobile app that connects to WHOOP wearables to display real-time heart rate data and provide audio feedback based on heart rate zones.',
-    longDescription: 'A mobile application that integrates with WHOOP fitness trackers to display real-time heart rate monitoring. The app processes continuous BPM data streams and provides zone-based audio feedback to help users stay within their target heart rate zones during workouts. App Store listing pending approval.',
+    longDescription: 'A mobile application that integrates with WHOOP fitness trackers to display real-time heart rate monitoring. The app processes continuous BPM data streams and provides zone-based audio feedback to help users stay within their target heart rate zones during workouts.',
     technologies: ['React Native', 'TypeScript', 'REST APIs'],
     imageUrl: '/whoopapp.png',
+    demoUrl: 'https://drive.google.com/file/d/1m706rt2oXoQ6U9H__hBgG44JS1wFq4uW/view?usp=sharing',
+    demoLabel: 'Android Download',
     githubUrl: 'https://github.com/NickGardi/WhoopRun',
     media: [
       { type: 'image', url: '/whoopapp.png', title: 'Fitness App Screenshot' },
