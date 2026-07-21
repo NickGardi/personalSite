@@ -22,7 +22,7 @@ export interface Project {
 
 const projects: Project[] = [
   {
-    title: 'Shopify Inventory Management App (StockOps)',
+    title: 'Shopify Inventory Management App',
     description: 'Built an embedded Shopify inventory app (Remix/React, Prisma, GraphQL) that replaces Stocky-lite for merchants: reorder suggestions from sales velocity, supplier management, purchase orders with receiving, and multi-location stock transfers synced to Shopify inventory.',
     longDescription: 'Built StockOps, an embedded Shopify inventory management app using Remix, Prisma, and Shopify GraphQL, covering reorder forecasting, purchase orders, receiving, suppliers, and inter-location transfers. Designed workflows that keep local inventory state and Shopify in sync (send/receive/delete reverse), with soft-delete audit trails and webhook-driven product/location updates. Implemented multi-tenant shop isolation, encrypted access-token storage, and operational UI for drafts → confirm → receive purchase order flows. Shopify App Store listing pending approval.',
     technologies: ['Remix', 'React', 'Prisma', 'GraphQL', 'Shopify'],
