@@ -14,6 +14,7 @@ export interface Project {
   description: string;
   longDescription?: string;
   imageUrl?: string;
+  imagePosition?: string;
   demoUrl?: string;
   demoLabel?: string;
   githubUrl?: string;
@@ -38,11 +39,11 @@ const projects: Project[] = [
     description: 'A price-time priority limit order book matching engine with a live Streamlit UI. Simulates exchange matching with partial fills, market orders, and interactive book and trade visualization.',
     longDescription: 'Built a limit order book matching engine in Python with price-time priority: better prices match first, and at the same price earlier orders fill first (FIFO). Orders that cross the book walk levels until filled or exhausted; partial fills rest at the resting order\'s price. The matching engine is plain Python (SortedDict + deque per level); Streamlit drives the UI with live book state, charts, order entry, and simulation. Includes pytest coverage for matching behavior.',
     technologies: ['Python', 'Streamlit', 'SortedDict', 'pytest'],
-    imageUrl: '/chart.jpg',
+    imageUrl: '/orderbooksim.png',
     demoUrl: 'https://nickgardi-orderbooksim-app-m4vk2z.streamlit.app/',
     githubUrl: 'https://github.com/NickGardi/orderbooksim',
     media: [
-      { type: 'image', url: '/chart.jpg', title: 'Limit Order Book Visualization' },
+      { type: 'image', url: '/orderbooksim.png', title: 'Limit Order Book Dashboard' },
     ],
   },
   {
@@ -50,6 +51,11 @@ const projects: Project[] = [
     description: 'A crypto top-of-book aggregator that ingests live quotes from Binance, Coinbase, Kraken, and Shakepay, compares best bid/ask across venues, and serves prices through a FastAPI dashboard. Not a trading bot — it collects, compares, and serves prices.',
     longDescription: 'Built a crypto top-of-book aggregator shaped like a data-engineering pipeline. Public quotes from Binance, Coinbase, Kraken, and Shakepay flow through Kafka, Spark Structured Streaming, Cassandra, Redis, and FastAPI, with Airflow rolling ticks into Postgres history and Prometheus/Grafana for observability. The service does not trade — it collects, compares, and serves prices via REST and WebSocket, including cross-venue best bid/ask, spread, and venue attribution.',
     technologies: ['Python', 'FastAPI', 'Kafka', 'Spark', 'Cassandra', 'Redis', 'Docker'],
+    imageUrl: '/exchange-feeds.png',
+    demoUrl: 'https://exchange-feeds.fly.dev/',
+    media: [
+      { type: 'image', url: '/exchange-feeds.png', title: 'Exchange Feeds Dashboard' },
+    ],
   },
   {
     title: 'Fitness Wearable Data Aggregation Mobile App',
@@ -57,6 +63,7 @@ const projects: Project[] = [
     longDescription: 'A mobile application that integrates with WHOOP fitness trackers to display real-time heart rate monitoring. The app processes continuous BPM data streams and provides zone-based audio feedback to help users stay within their target heart rate zones during workouts.',
     technologies: ['React Native', 'TypeScript', 'REST APIs'],
     imageUrl: '/whoopapp.png',
+    imagePosition: 'center 18%',
     demoUrl: 'https://drive.google.com/file/d/1m706rt2oXoQ6U9H__hBgG44JS1wFq4uW/view?usp=sharing',
     demoLabel: 'Android Download',
     githubUrl: 'https://github.com/NickGardi/WhoopRun',
@@ -157,7 +164,9 @@ const Projects: React.FC = () => {
     <>
       <section className="projects section">
         <div className="container">
-          <h2 className="section-title">Personal Projects</h2>
+          <div className="panel-head">
+            <h2 className="section-title">Projects</h2>
+          </div>
           <div className="projects-grid">
             {projects.map((project, index) => (
               <div
@@ -182,12 +191,24 @@ const Projects: React.FC = () => {
                     const currentMediaIndex = hoveredImageIndex[index] || 0;
                     const currentMedia = project.media[currentMediaIndex];
                     if (currentMedia && currentMedia.type === 'image') {
-                      return <img src={currentMedia.url} alt={project.title} className="project-image" />;
+                      return (
+                        <img
+                          src={currentMedia.url}
+                          alt={project.title}
+                          className="project-image"
+                          style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
+                        />
+                      );
                     }
                   }
                   // Otherwise show the default image
                   return project.imageUrl ? (
-                    <img src={project.imageUrl} alt={project.title} className="project-image" />
+                    <img
+                      src={project.imageUrl}
+                      alt={project.title}
+                      className="project-image"
+                      style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
+                    />
                   ) : (
                     <div className="project-image-placeholder">
                       <span>Project Screenshot</span>
@@ -205,7 +226,7 @@ const Projects: React.FC = () => {
                     </div>
                   )}
                   <div className="project-links">
-                    <span className="project-link view-details">View Details →</span>
+                    <span className="project-link view-details">details →</span>
                   </div>
                 </div>
               </div>

@@ -1,203 +1,128 @@
 .projects {
-  background: var(--bg-primary);
-  padding: 5rem 0;
+  background: var(--bg);
+}
+
+.projects .panel-head {
+  margin-bottom: 18px;
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
 .project-card {
-  background: var(--bg-secondary);
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid var(--border-color);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  animation: fadeInUp 0.6s ease-out backwards;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
   cursor: pointer;
-}
-
-.project-card:nth-child(1) { animation-delay: 0.1s; }
-.project-card:nth-child(2) { animation-delay: 0.2s; }
-.project-card:nth-child(3) { animation-delay: 0.3s; }
-.project-card:nth-child(4) { animation-delay: 0.4s; }
-.project-card:nth-child(5) { animation-delay: 0.5s; }
-.project-card:nth-child(6) { animation-delay: 0.6s; }
-
-.project-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--gradient-primary);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: 0;
-  pointer-events: none;
+  text-align: left;
+  color: inherit;
+  box-shadow:
+    0 1px 0 rgba(236, 231, 220, 0.05) inset,
+    0 10px 28px rgba(0, 0, 0, 0.28),
+    0 2px 8px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--accent-purple);
+  transform: translateY(-3px);
+  border-color: #4a463c;
+  box-shadow:
+    0 1px 0 rgba(236, 231, 220, 0.07) inset,
+    0 16px 40px rgba(0, 0, 0, 0.38),
+    0 4px 12px rgba(0, 0, 0, 0.22);
 }
 
-.project-card:hover::before {
-  opacity: 0.05;
+.project-card:hover .project-title {
+  color: var(--accent);
 }
 
 .project-image,
 .project-image-placeholder {
   width: 100%;
-  height: 280px;
+  height: 200px;
   object-fit: cover;
-  background: var(--bg-tertiary);
+  object-position: top center;
+  background: var(--line);
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.project-image {
-  object-position: center 30%;
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22) inset;
 }
 
 .project-image-placeholder {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  border-bottom: 1px solid var(--border-color);
-  background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
-}
-
-.project-image-placeholder::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--gradient-primary);
-  opacity: 0.1;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-style: italic;
 }
 
 .project-content {
-  padding: 2rem;
-  position: relative;
-  z-index: 1;
+  padding: 16px 18px 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
 }
 
 .project-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--text-primary);
-  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-purple) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--ink);
+  transition: color 0.15s ease;
 }
 
 .project-description {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--text-secondary);
-  margin-bottom: 1.5rem;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--muted);
+  margin-bottom: 14px;
+  flex: 1;
 }
 
 .project-technologies {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
+  gap: 8px 14px;
+  margin-bottom: 14px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
 }
 
 .tech-tag {
-  font-size: 0.8rem;
-  padding: 0.4rem 1rem;
-  background: var(--bg-tertiary);
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
-  color: var(--text-secondary);
-  transition: all 0.3s ease;
-  font-weight: 500;
-}
-
-.tech-tag:hover {
-  background: var(--bg-primary);
-  border-color: var(--accent-cyan);
-  color: var(--accent-cyan);
-  transform: translateY(-2px);
+  color: var(--muted);
 }
 
 .project-links {
-  display: flex;
-  gap: 1.5rem;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
 }
 
 .project-link {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--primary-color);
-  transition: all 0.3s ease;
-  position: relative;
-  padding-bottom: 2px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
 }
 
-.project-link.view-details {
-  color: var(--accent-purple);
+.project-link.view-details:hover {
+  color: var(--ink);
 }
 
-.project-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--gradient-primary);
-  transition: width 0.3s ease;
-}
-
-.project-link:hover {
-  color: var(--accent-purple);
-}
-
-.project-link:hover::after {
-  width: 100%;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 1024px) {
-  .projects-grid {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .projects {
-    padding: 3rem 0;
-  }
-  
+@media (max-width: 900px) {
   .projects-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 16px;
   }
-  
-  .project-content {
-    padding: 1.5rem;
-  }
-  
+
   .project-image,
   .project-image-placeholder {
     height: 180px;
@@ -205,12 +130,7 @@
 }
 
 @media (max-width: 480px) {
-  .project-title {
-    font-size: 1.25rem;
-  }
-  
-  .project-description {
-    font-size: 0.95rem;
+  .project-content {
+    padding: 14px 14px 16px;
   }
 }
-
