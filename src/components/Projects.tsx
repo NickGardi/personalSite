@@ -53,6 +53,7 @@ const projects: Project[] = [
     technologies: ['Python', 'FastAPI', 'Kafka', 'Spark', 'Cassandra', 'Redis', 'Docker'],
     imageUrl: '/exchange-feeds.png',
     demoUrl: 'https://exchange-feeds.fly.dev/',
+    githubUrl: 'https://github.com/NickGardi/exchange-feeds',
     media: [
       { type: 'image', url: '/exchange-feeds.png', title: 'Exchange Feeds Dashboard' },
     ],
