@@ -34,6 +34,24 @@ const projects: Project[] = [
     ],
   },
   {
+    title: 'Limit Order Book & Execution Simulator',
+    description: 'A price-time priority limit order book matching engine with a live Streamlit UI. Simulates exchange matching with partial fills, market orders, and interactive book and trade visualization.',
+    longDescription: 'Built a limit order book matching engine in Python with price-time priority: better prices match first, and at the same price earlier orders fill first (FIFO). Orders that cross the book walk levels until filled or exhausted; partial fills rest at the resting order\'s price. The matching engine is plain Python (SortedDict + deque per level); Streamlit drives the UI with live book state, charts, order entry, and simulation. Includes pytest coverage for matching behavior.',
+    technologies: ['Python', 'Streamlit', 'SortedDict', 'pytest'],
+    imageUrl: '/chart.jpg',
+    demoUrl: 'https://nickgardi-orderbooksim-app-m4vk2z.streamlit.app/',
+    githubUrl: 'https://github.com/NickGardi/orderbooksim',
+    media: [
+      { type: 'image', url: '/chart.jpg', title: 'Limit Order Book Visualization' },
+    ],
+  },
+  {
+    title: 'Multi-Exchange Crypto Price Feed Aggregator',
+    description: 'A crypto top-of-book aggregator that ingests live quotes from Binance, Coinbase, Kraken, and Shakepay, compares best bid/ask across venues, and serves prices through a FastAPI dashboard. Not a trading bot — it collects, compares, and serves prices.',
+    longDescription: 'Built a crypto top-of-book aggregator shaped like a data-engineering pipeline. Public quotes from Binance, Coinbase, Kraken, and Shakepay flow through Kafka, Spark Structured Streaming, Cassandra, Redis, and FastAPI, with Airflow rolling ticks into Postgres history and Prometheus/Grafana for observability. The service does not trade — it collects, compares, and serves prices via REST and WebSocket, including cross-venue best bid/ask, spread, and venue attribution.',
+    technologies: ['Python', 'FastAPI', 'Kafka', 'Spark', 'Cassandra', 'Redis', 'Docker'],
+  },
+  {
     title: 'Fitness Wearable Data Aggregation Mobile App',
     description: 'A mobile app that connects to WHOOP wearables to display real-time heart rate data and provide audio feedback based on heart rate zones.',
     longDescription: 'A mobile application that integrates with WHOOP fitness trackers to display real-time heart rate monitoring. The app processes continuous BPM data streams and provides zone-based audio feedback to help users stay within their target heart rate zones during workouts.',
@@ -71,16 +89,6 @@ const projects: Project[] = [
       { type: 'image', url: '/NEAT1.png', title: 'NEAT Evolution - Generation 1' },
       { type: 'image', url: '/NEAT2.png', title: 'NEAT Evolution - Mid Generations' },
       { type: 'image', url: '/NEAT3.png', title: 'NEAT Evolution - Advanced Generations' },
-    ],
-  },
-  {
-    title: 'Limit Order Book & Execution Simulator',
-    description: 'Built a Python-based limit order book and execution simulator modeling price–time priority, partial fills, and market orders.',
-    longDescription: 'Developed a limit order book and execution simulator in Python to model exchange matching engine behavior. The system implements price–time priority matching, handles partial fills, and processes market orders. Built post-trade analytics to explore execution quality, slippage, and liquidity dynamics through scenario-based simulations. Created a lightweight web interface using React and FastAPI for interactive visualization and analysis of order execution patterns.',
-    technologies: ['Python', 'FastAPI', 'NumPy', 'SortedContainers', 'React'],
-    imageUrl: '/chart.jpg',
-    media: [
-      { type: 'image', url: '/chart.jpg', title: 'Limit Order Book Visualization' },
     ],
   },
 ];
