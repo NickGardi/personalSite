@@ -48,8 +48,8 @@ const projects: Project[] = [
   },
   {
     title: 'Multi-Exchange Crypto Price Feed Aggregator',
-    description: 'A crypto top-of-book aggregator that ingests live quotes from Binance, Coinbase, Kraken, and Shakepay, compares best bid/ask across venues, and serves prices through a FastAPI dashboard. Not a trading bot — it collects, compares, and serves prices.',
-    longDescription: 'Built a crypto top-of-book aggregator shaped like a data-engineering pipeline. Public quotes from Binance, Coinbase, Kraken, and Shakepay flow through Kafka, Spark Structured Streaming, Cassandra, Redis, and FastAPI, with Airflow rolling ticks into Postgres history and Prometheus/Grafana for observability. The service does not trade — it collects, compares, and serves prices via REST and WebSocket, including cross-venue best bid/ask, spread, and venue attribution.',
+    description: 'A crypto top-of-book aggregator that ingests live quotes from Binance, Coinbase, Kraken, and Shakepay, compares best bid/ask across venues, and serves prices through a FastAPI dashboard. Not a trading bot: it collects, compares, and serves prices.',
+    longDescription: 'Built a crypto top-of-book aggregator shaped like a data-engineering pipeline. Public quotes from Binance, Coinbase, Kraken, and Shakepay flow through Kafka, Spark Structured Streaming, Cassandra, Redis, and FastAPI, with Airflow rolling ticks into Postgres history and Prometheus/Grafana for observability. The service does not trade: it collects, compares, and serves prices via REST and WebSocket, including cross-venue best bid/ask, spread, and venue attribution.',
     technologies: ['Python', 'FastAPI', 'Kafka', 'Spark', 'Cassandra', 'Redis', 'Docker'],
     imageUrl: '/exchange-feeds.png',
     demoUrl: 'https://exchange-feeds.fly.dev/',
