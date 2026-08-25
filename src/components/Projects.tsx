@@ -59,6 +59,19 @@ const projects: Project[] = [
     ],
   },
   {
+    title: 'Wintermute Alpha Challenge 2026',
+    description: 'Solutions to Wintermute\'s open onchain case studies: analysis challenges that recover real addresses, txs, and protocol details, plus Foundry fork tests that reproduce historical Ethereum end states.',
+    longDescription: 'Worked through Wintermute\'s Alpha Challenge 2026 educational edition: real incidents from onchain history packaged as self-checking challenges. Analysis challenges require finding the right address, transaction, or name and verifying against SHA-256 hashes via a Python runner. Code challenges fork Ethereum (and other chains) at historical blocks with Foundry and require writing Solidity solutions that satisfy checkSolve end-state assertions. Stack centers on Solidity, Foundry forge tests with archive RPC forks, and Python for challenge scoring.',
+    technologies: ['Solidity', 'Foundry', 'Python', 'Ethereum'],
+    imageUrl: '/wintermute-alpha.png',
+    demoUrl: 'https://alpha.wintermute.com',
+    demoLabel: 'Challenge',
+    githubUrl: 'https://github.com/NickGardi/alpha-challenge-2026-solutions',
+    media: [
+      { type: 'image', url: '/wintermute-alpha.png', title: 'Wintermute Alpha Challenge' },
+    ],
+  },
+  {
     title: 'Fitness Wearable Data Aggregation Mobile App',
     description: 'A mobile app that connects to WHOOP wearables to display real-time heart rate data and provide audio feedback based on heart rate zones.',
     longDescription: 'A mobile application that integrates with WHOOP fitness trackers to display real-time heart rate monitoring. The app processes continuous BPM data streams and provides zone-based audio feedback to help users stay within their target heart rate zones during workouts.',
